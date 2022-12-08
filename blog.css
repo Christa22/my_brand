@@ -1,0 +1,160 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: sans-serif;
+}
+.return{
+    position: absolute;
+    z-index: 3;
+    top: 2vh;
+    left: 2vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.337);
+    font-size: large;
+    text-decoration: none;
+    padding: 1%;
+
+}
+
+.blog_upper{
+    
+    width: 100%;
+    height: 40vh;
+    top: 0%;
+    background: rgb(27, 77, 77);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* uhindure hano background ushyireho url yi ifoto */
+.letter{
+    padding: 20vh 15vw 0%;
+    color: white;
+    font-size: 3em;
+
+   
+}
+.where{
+    color: white;
+    font-size: x-large;
+    padding-left: 15vw;
+  
+}
+.blog_mid{
+    width: 55vw;
+    margin: 2% auto;
+}
+.date{
+    border-bottom: 2px solid black;
+    font-size: larger;
+    margin: 1% 0% 5%;
+}
+.blog_content{
+    font-size: larger;
+    border-bottom: 2px solid black;
+    padding: 0% 0% 1%;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.prev,.next{
+    background-color: hsl(0, 0%,0%,0.4);
+    font-size: larger;
+    border: none;
+    color: white;
+    margin: .7% 0%;
+    padding: .6% 2%;
+
+}
+.comments_section{
+    width: 55vw;
+    margin: 2% auto;
+    
+}
+.comments_hd::before{
+    content: "___";
+    position: absolute;
+    font-size: 1px;
+    transform: translateY(-2.7vh);
+    margin-left: -2em;
+    font-size: xx-large;
+}
+.comments_hd{
+    text-align: center;
+    font-size: x-large;
+ 
+}
+.comments_hd::after{
+    content: "___";
+    position: absolute;
+    font-size: 1px;
+    transform: translateY(-2.7vh);
+    margin-left: .4em;
+    font-size: xx-large;
+}
+.comment_box{
+    display: flex;
+    margin: 3% 0%;
+}
+#comment_icon{
+    margin-right:2%;
+    font-size: 4em;
+    background-color: gray;
+    color: white;
+    height: fit-content;
+}
+.comment_content{
+    font-size: large;
+}
+.comment_post{
+    padding: 1% 3%;
+    resize: none;
+    width: 40vw;
+    border:solid gray;
+    
+    border-radius: 2vh;
+}
+.comment_name,.comment_email{
+padding: 1% 2%;
+font-size: large;
+border:solid gray;
+border-radius: 1.5vh;
+margin: 2% 0%;
+}
+.comment_submit,.comment_cancel{
+    background-color: hsla(0, 0%, 0%, 0.5);
+    border: none;
+    font-size: x-large;
+    color: white;
+    border-radius: 1vh;
+    padding: 1% 5%;
+    margin-right: 3%;
+}
+/* responsive */
+@media screen and (max-width:700px) {
+    .blog_mid{
+        width: 80vw;
+    }
+    .comments_section{
+        width: 80vw;
+        padding-bottom: 5%;
+    }
+    .letter{
+        font-size: 2.5em;
+        padding: 20vh 5vw 0%;
+    }
+    .where{
+        font-size: larger;
+        padding: 0vh 5vw 0%;
+    }
+    .comment_post{
+        width: 60vw;
+    }
+    .comment_submit,.comment_cancel{
+      
+        padding: 2% 5%;
+        margin-right: 3%;
+    }
+}
