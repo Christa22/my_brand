@@ -4,59 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella Portfolio</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-    <div class="main-body" id="home">
-        <nav>
-            <ul class="navbar-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Portfolio</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="main-body-divs">
-            <div class="main-body-text">
-                <h1 class="main-body-text__header">Hello!!</h1>
-                <p class="main-body-text__description">I am Christa Bella. A full stack web Developer and web designer</p>
+    <div class="wrapper">
+
+        <div class="art-msg">
+            <div style="font-weight: 500;">
+                <a href="#">ARTICLES</a>
             </div>
-            <div class="main-body-image">
-                <img src="./image.jpeg" alt="Bella Image" class="main-body-image__img">
+            <div class="msg">
+                <a href="#">MESSAGES</a>
             </div>
         </div>
-    </div>
-    <div class="about-div" id="about">
-        <h2 class="div-header">About Me</h2>
-        <div class="about-description-divs">
-            <div class="about-desc">
-                <p>I am a hardworking young lady, willing to impact positively the society. I am currently pursuing my university courses at Adventist University of Central Africa in Networks and Telecommunications systems  and Learning new skills and expanding my  tech skills  at Andela as future developer
-                </p>
+
+        <div class="view-reply">View and reply messages</div>
+
+        <!-- Section1  -->
+        <div class="comment-section" style="margin-top: 70px;">
+            <div class="icon" style="margin-right: 20px;">
+                <i class="fa-solid fa-user" id="comment_icon"></i>
             </div>
-            <div class="about-languages">
-                <h3>Programming Language Skills</h3>
-                <ul class="programming-languages-list">
-                    <li>Javascript</li>
-                    <li>C & C++</li>
-                    <li>Java</li>
-                    <li>Html</li>
-                    <li>Css</li>
-                </ul>
+            <div class="comment-details">
+               <div class="sender">
+                    <div class="name">
+                        Jean
+                    </div>
+                    <div class="email text-gray">jean@gmail.com</div>
+                        <div class="reply text-gray">
+                            <a style="color: gray;" href="#">Reply</a>
+                        </div>
+                </div>
+                <div class="comment text-gray">
+                 Hey Man, cool site. I'm looking for inspiration for a personal site and I like yours a lot
+                </div>
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="services-div" id="services">
-        <h2 class="div-header">My Services</h2>
-        <div class="services-description-divs">
-            <div class="web-development-div">
-                <h3>Web Development</h3>
-                <p>I build and maintains websites. And i direct site's overall look and feel.,and i also handle the technical aspects of a website, including its performance (website speed) and capacity (the maximum amount of traffic the site could handle at a given time).</p>
+
+        <!-- Section 2 -->
+        <div class="comment-section" style="margin-top: 24px;">
+            <div class="icon" style="margin-right: 20px;">
+                <i class="fa-solid fa-user" id="comment_icon"></i>
             </div>
-            <div class="web-development-div">
-                <h3>UI/UX Design</h3>
-                <p>I gather and evaluates user requirements in collaboration with Product Managers.  I also design graphic user interface elements like menus tab widgets</p>
+            <div class="comment-details">
+               <div class="sender">
+                    <div class="name">
+                        Fiston
+                    </div>
+                    <div class="email text-gray">fiston@gmail.com</div>
+                        <div class="reply text-gray">
+                            <a style="color: gray;" href="#">Reply</a>
+                        </div>
+                </div>
+                <div class="comment text-gray">
+                 Hey Man, cool site. I'm looking for inspiration for a personal site and I like yours a lot
+                </div>
+               </div>
+            </div>
+
+            <div class="message-box" style="margin-top: 32px;">
+                <textarea class="text-area" name="" id="" cols="" rows="5" placeholder="Write a reply here"></textarea>
+            </div>
+
+            <div class="send-button-wrapper" style="margin-top: 28px;">
+                <button class="send-button">Send</button>
             </div>
         </div>
     </div>
