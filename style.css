@@ -3,10 +3,14 @@
 
 body{
     box-sizing: border-box;
-    padding: .5rem;
+    padding:0;
     margin: 0;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    
+
+
+    
 }
 
 html {
@@ -49,16 +53,16 @@ ul li {
     margin: 0;
     }
 
-h2,h3 {
+h2,h3,h4 {
         letter-spacing: 1px;
-        font-weight: 500 !important;
+        font-weight: 700 !important;
 
     }
 h1 {
-    font-size: 1.8rem !important;
-    font-weight: 500 !important;
+    font-size: 2rem !important;
+    font-weight: 600 !important;
     line-height: 3rem;
-    color:var(--white)
+    color:var(--white);
 }
 h1 span{
     color:var(--yellow) ;
@@ -66,27 +70,34 @@ h1 span{
 
 h2{
     color: var(--main);
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
 }
 
 h3{
-    font-size: 1rem !important;
+    font-size: .8rem !important;
     color: var(--main);
 }
 
+h4{
+    font-size: 1rem !important;
+    color: gray;
+}
+
 P{
-    line-height: 25px;
+    line-height: 30px;
     letter-spacing: 1px;
 }
 
 hr{
-   width: 150px;
-   margin: 1rem 0;
-   border: 3px solid #FFB000;
+    width: 150px;
+    margin: 1rem 0;
+    border: 3px solid #FFB000;
+   
+   
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 1400px;
     padding: 0;
     font-family: 'Montserrat', sans-serif !important;
     background-color: unset;
@@ -95,8 +106,6 @@ hr{
     font-family: 'Montserrat', sans-serif !important;
     padding: 0;
     background-color: unset;
-
-
 }
 
 .flex-colo{
@@ -149,7 +158,7 @@ hr{
         font-weight: 600;
  } 
 /*About*/
-     #about-me {
+     #about-me,#my services,#works{
         padding: 3rem 0;
      }
 
@@ -164,4 +173,99 @@ hr{
         height: 100%;
         object-fit: cover;
       }
-     
+     /*Services*/
+
+    .myServices{
+        padding: 5rem 0;
+        background-color: var(--main);
+        width: 100%;
+    }
+  .myservices-box{
+    background-color:var(--sub-main);
+    padding: 2rem 2rem;
+   color: var(--gray);
+   font-size:.9rem;
+   box-shadow: inset 3px 3px 20px 1px #003864;
+
+  }  
+    
+  .myservices-box img{
+    margin: 2rem;
+    font-size: 2.5em; 
+    color:var(--white);
+ }
+ .myservices-box h3{
+    color:var(--yellow);   
+ }
+
+ /*works*/
+.work-button{
+    margin: 2rem 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   }
+
+   .work-button button{
+    padding: .5rem 2rem;
+    margin: 1rem;
+    background-color: unset;
+    border: 2px solid #003864;
+    font-weight: 500;
+    font-size: .8rem;
+   }
+   .work-box{
+       background-color: var(--gray);
+       height: 300px;
+       position: relative;
+   }
+
+   .work-box img{
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+   }
+   .work-overlay{
+    position: absolute;
+    top:22px;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    background-color: #000000af;
+    transition: ease-in-out .5s;
+    text-align: center;
+    transform: scale(0);
+   }
+
+   .work-overlay button{
+         width: 40%;
+         padding: .7rem 0;
+         background-color:var(--white);
+         font-size: .8rem;
+         font-weight: 700;
+         columns: var(--yellow);
+   }
+
+   .work-box:hover .work-overlay{
+        transform: scale(1);
+        transition: ease-in-out .5s;
+   }
+
+   .gaps{
+    gap: 40px;
+   }
+   .pagination li{
+       padding: .4rem 1.1rem;  
+       border: 2px solid #FFB000;
+       margin: 0 .5rem;
+       font-weight: 700;
+       color: var(--main);
+   }
+
+   .pagination .active{
+    background-color: var(--yellow);
+    color: var(--white);
+
+   }
+   
