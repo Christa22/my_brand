@@ -19,3 +19,8 @@ var typed = new Typed('#typed', {
     attr:null,
     contentTypeL:"html",
   });
+
+  //Mixitup
+
+  var container= $(".mixitup");
+  mixitup(containe);
