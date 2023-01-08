@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.7.2/css/all.css"
+     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   
+    <!--Google Fonts-->
+   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
+    
+   <!--custom Styling-->
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!--Admin Styling-->
+    <link rel="stylesheet" href="../../css/admin.css">
+
+
+    <title>Admin Section - Managed Topics</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h3 class="logo-text"><span>Christa</span>Inspires</h3>
+        </div>
+        <i class="fa fa-bars menu-toogle"></i>
+        <ul class="nav">
+         
+            <li><a href="#"><i class="fa fa-user"></i>Christa Bella
+                <i class="fa fa-chevron-down"  style="font-size: .8em;"></i>
+                </a>
+                <ul>
+                    
+                    <li><a href="#" class="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+<!--Admin Page wrapper-->
+
+    <div class="admin-wrapper clearfix">
+       
+      <!--Left Sidebar-->   
+      <div class="left-sidebar">
+        <ul>
+            <li><a href="../posts/index.html">Manage Posts</a></li>
+            <li><a href="../users/index.html">Manage users </a></li>
+            <li><a href="index.html">Manage Topics</a></li>
+          </ul>
+      </div> 
+      <!--//Left sidebar-->   
+      
+      <!--Admin content-->
+    <div class="admin-content"> 
+        <div class="button-group">
+        <a href="createtopics.html" class="btn btn-big">Add Topic</a>
+        <a href="index.html" class="btn btn-big">Manage Topics</a>
+        </div>
+   
+    <div class="content">
+     <h2 class="page-title">Manage Topics</h2>
+
+     <table>
+        <thead>
+            
+            <th>Name</th>
+            <th>Description</th>
+            <th colspan="2">Action</th>
+        </thead>
+        <tbody id="Read-Topic">
+           </tbody>
+     </table>
+    </div>
+    </div>
+    </div>
+    
+
+
+      <!--//Admin content-->
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="configT.js"></script>
+    <script src="readTopic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Custom Script-->
+    <script src="../../js/script.js"></script>
+ </body>
+</html>
