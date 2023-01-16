@@ -13,7 +13,12 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
+
 // Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
 console.log("Firebase running..",db);
 const Auth = firebase.auth();
+
+
+// Initialize Cloud Storage and get a reference to the service
+const storage = firebase.storage();
