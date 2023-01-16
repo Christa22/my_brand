@@ -18,8 +18,10 @@
 
     <!--Admin Styling-->
     <link rel="stylesheet" href="../../css/admin.css">
+        <!--Ckeditor-->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
 
-
+    
     <title>Admin Section - Managed Topics</title>
 </head>
 <body>
@@ -75,6 +77,38 @@
         <tbody id="Read-Topic">
            </tbody>
      </table>
+     <div class="content">
+        <h2 class="page-title">Edit Topic</h2>
+   
+       <form id="TopicEdit">
+           <div>
+               <label>Name</label>
+               <input type="text" name="name" class="text-input" id="EditTopicName">
+           </div>
+
+           <div id="EditDescriptMessage">
+            <p>This is some sample content.</p>
+        </div>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#EditDescriptMessage' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+
+
+
+   
+         <!--<div>
+               <label>Description</label>
+              <textarea name="description" id="EditDescriptMessage"></textarea>
+           </div>-->  
+           <div>
+               <button type="submit" class="btn btn-big">Save Topic</button>
+           </div>
+       </form>
+       </div>
     </div>
     </div>
     </div>
@@ -86,10 +120,12 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="../../js/script.js"></script>
     <script src="configT.js"></script>
     <script src="readTopic.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Custom Script-->
-    <script src="../../js/script.js"></script>
+ 
  </body>
 </html>
