@@ -12,7 +12,7 @@ db.collection("Topic-Form").get().then((querySnapshot) => {
              
        <td>${doc.data().TopicName}</td>
        <td>${doc.data().DescriptMessage}</td>
-       <td><a href="#" class="edit">edit</a></td>
+       <td><a href="#" id="${doc.id}" class="edit UpdateTopic">edit</a></td>
        <td><a href="#" id="${doc.id}"class="delete  deleteTopic">delete</a></td>
        </tr>`
 
@@ -40,6 +40,70 @@ db.collection("Topic-Form").get().then((querySnapshot) => {
              }
          })
      }
+
+        //Edit Topic
+
+    var EditTopic = document.getElementsByClassName("UpdateTopic");
+    for (let i of EditTopic) {
+        i.addEventListener("click", (event) => {
+            if (event.target.classList.contains("UpdateTopic")) {
+                var docId = i.getAttribute("id");
+                console.log("Perfrom Action",docId);
+                
+                // firebase edit
+                var docRef = db.collection("Topic-Form").doc(docId);
+
+                docRef.get().then((doc) => {
+                    if (doc.exists) {
+
+                        var TopicForm = document.getElementById("TopicEdit");
+
+                         document.getElementById("EditTopicName").value  = doc.data().TopicName;
+                         document.getElementById("EditDescriptMessage").value = doc.data().DescriptMessage;
+                         
+                          
+                         TopicForm.addEventListener("submit",(event)=>{
+                            event.preventDefault();
+
+                        var inputTopicN = document.getElementById("EditTopicName").value;
+                        var inputMessage =  document.getElementById("EditDescriptMessage").value;
+                       
+
+                            var RenewObject =  {
+                                TopicName: inputTopicN,
+                                DescriptMessage: inputMessage,
+                            
+                              }
+
+                        var NewUpdate = db.collection("Topic-Form").doc(docId);
+
+                            // Set the "capital" field of the city 'DC'
+                            return NewUpdate.update(RenewObject)
+                            .then(() => {
+                                alert("Document successfully updated!");
+                                location.reload();
+                            })
+                            .catch((error) => {
+                                // The document probably doesn't exist.
+                                console.error("Error updating document: ", error);
+                            });
+
+
+                      
+                         })
+                    } 
+                })
+            }
+        })
+    }
+
+
+
+
+
+
+
+
  });
  
 
