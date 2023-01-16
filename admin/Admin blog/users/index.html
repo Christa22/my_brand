@@ -79,6 +79,44 @@
            
           </tbody>
      </table>
+     <div class="content">
+        <h2 class="page-title">Edit user</h2>
+   
+       <form id="UpdateUser">
+           
+           <div>
+               <label>Username</label>
+               <input type="text" name="username"
+                class="text-input" id="EditUserName">
+             </div>
+             <div>
+               <label>Email</label>
+               <input type="email" name="email" class="text-input" id="EditEmail">
+             </div>
+             <div>
+               <label>Password</label>
+               <input type="password" name="password"
+                class="text-input" id="EidtPin">
+             </div>
+             <div>
+               <label>Password Confirmation </label>
+               <input type="password" name="passwordConf" 
+               class="text-input" id="EditPinConf">
+             </div>
+   
+             <div> 
+               <label>Role</label>
+             <select name="role" class="text-input" id="EditRole">
+               <option value="Author">Author</option>
+               <option value="Admin">Admin</option>
+             </select>
+           </div>
+         
+           <div>
+               <button type="submit" class="btn btn-big">Save User</button>
+           </div>
+       </form>
+       </div>
     </div>
     </div>
     </div>
