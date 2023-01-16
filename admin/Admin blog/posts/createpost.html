@@ -19,9 +19,8 @@
 
    <!--custom Styling-->
     <link rel="stylesheet" href="../../css/style.css">
-
-    
-
+    <!--Ckeditor-->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
 
     <title>Admin Section - Add post</title>
 </head>
@@ -74,13 +73,25 @@
             <input type="text" name="title" class="text-input" id="Title">
         </div>
 
-        <div>
+      
+        <div id="Body">
+            <p>This is some sample content.</p>
+        </div>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#Body' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+      
+        <!-- <div>
             <label>Body</label>
            <textarea name="body" id="Body"></textarea>
-        </div>
+        </div>-->
         <div>
             <label>Image</label>
-            <input type="file" name="image" class="text-input">
+            <input type="file" name="image" accept="image/*" id="picture" class="text-input">
         </div>
         <div> 
             <label>Topic</label>
@@ -106,9 +117,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
     <script src="config.js"></script>
     <script src="Post.js"></script>
-    <script src="readPost.js"></script>
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
