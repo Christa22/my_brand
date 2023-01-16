@@ -18,8 +18,7 @@
 
     <!--Admin Styling-->
     <link rel="stylesheet" href="../../css/admin.css">
-
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
     <title>Admin Section - Add Topic</title>
 </head>
 <body>
@@ -71,11 +70,24 @@
             <input type="text" name="name" class="text-input" id="TopicName">
         </div>
 
-        <div>
+
+        <div id="DescriptMessage">
+            <p>This is some sample content.</p>
+        </div>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#DescriptMessage' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+
+
+
+     <!--<div>
             <label>Description</label>
            <textarea name="description" id="DescriptMessage"></textarea>
-        </div>
-
+        </div>-->
         
         <div>
             <button type="submit" class="btn btn-big">Add Topic</button>
@@ -85,7 +97,8 @@
     </div>
     </div>
    <!--//Admin content-->
-
+          <!--Ckeditor-->
+   
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="configT.js"></script>
@@ -98,5 +111,6 @@
      <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
     <!--Custom Script-->
     <script src="../../js/script.js"></script>
+   
  </body>
 </html>
