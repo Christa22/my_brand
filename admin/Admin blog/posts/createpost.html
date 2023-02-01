@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.7.2/css/all.css"
+     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   
+    <!--Google Fonts-->
+   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
+   
+   <!--Admin Styling-->
+   <link rel="stylesheet" href="../../css/admin.css"> 
+
+
+   <!--custom Styling-->
+    <link rel="stylesheet" href="../../css/style.css">
+    <!--Ckeditor-->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+
+    <title>Admin Section - Add post</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h3 class="logo-text"><span>Christa</span>Inspires</h3>
+        </div>
+        <i class="fa fa-bars menu-toogle"></i>
+        <ul class="nav">
+         
+            <li><a href="#"><i class="fa fa-user"></i>Christa Bella
+                <i class="fa fa-chevron-down"  style="font-size: .8em;"></i>
+                </a>
+                <ul>
+                    
+                    <li><a href="#" class="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+<!--Admin Page wrapper-->
+
+    <div class="admin-wrapper clearfix">
+       
+      <!--Left Sidebar-->   
+      <div class="left-sidebar">
+        <ul>
+            <li><a href="index.html">Manage Posts</a></li>
+            <li><a href="../users/index.html">Manage users </a></li>
+            <li><a href="../topics/index.html">Manage Topics</a></li>
+          </ul>
+      </div> 
+      <!--//Left sidebar-->   
+      
+      <!--Admin content-->
+    <div class="admin-content"> 
+        <div class="button-group">
+        <a href="createpost.html" class="btn btn-big">Add Post</a>
+        <a href="index.html" class="btn btn-big">Manage Posts</a>
+        </div>
+   
+    <div class="content">
+     <h2 class="page-title">Manage Posts</h2>
+
+    <form action="createpost.html" method="post" id="post-Form">
+        <div>
+            <label>Title</label>
+            <input type="text" name="title" class="text-input" id="Title">
+        </div>
+
+      
+        <div id="Body">
+            <p>This is some sample content.</p>
+        </div>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#Body' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+      
+        <!-- <div>
+            <label>Body</label>
+           <textarea name="body" id="Body"></textarea>
+        </div>-->
+        <div>
+            <label>Image</label>
+            <input type="file" name="image" accept="image/*" id="picture" class="text-input">
+        </div>
+        <div> 
+            <label>Topic</label>
+          <select name="topic" class="text-input" id="Topic">
+            <option value="Poetry">Poetry</option>
+            <option value="Life Lessons">Life Lessons</option>
+          </select>
+        </div>
+        
+        <div>
+            <button type="submit" class="btn btn-big">Add Post</button>
+        </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    
+
+
+      <!--//Admin content-->
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="config.js"></script>
+    <script src="Post.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     <!--Ckeditor-->
+     <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+
+    <!--Custom Script-->
+    <script src="../../js/script.js"></script>
+    
+    
+ </body>
+</html>
