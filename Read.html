@@ -31,13 +31,29 @@
         <h2>The Blog </h2>
         <hr/>
         <div class="container">
-          <div class="row mt-5 gaps justify-content-center" id="ReadMore">
-                     
-
+          <div class="row mt-5 gaps justify-content-center" id="ReadMore">    
+            </div>
+            
+            <form class="comment-form" id="Comment_form">
+              <h4 class="form-title">Leave a comment</h4>
+              <div class="form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-field">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" required></textarea>
+              </div>
+              <input type="submit" value="Submit">
+            </form>
       
           </div>
-        </div>
       </section>
+      <script src="comment.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 <script src="read.css"></script>

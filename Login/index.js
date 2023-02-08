@@ -4,29 +4,36 @@ loginForm.addEventListener('submit', (event) => {
   event.preventDefault();
   
   // Get the username and password values
-  const UserName = loginForm.elements.email.value;
-  const Passwordd = loginForm.elements.password.value;
+  const Email = loginForm.elements.email.value;
+  const Password = loginForm.elements.password.value;
 
-  //Firebase
-
-Auth.signInWithEmailAndPassword(UserName, Passwordd)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-   alert('Successfuly Login');
+ const Login = () => {
+fetch('http://127.0.0.1:5500/api/Login',{
+method: 'POST',
+headers: {
+  "Content-Type": "application/json"
+},
+body: JSON.stringify({
+  Email: Email,
+  Password: Password,
+})
+})
+.then(response => response.json())
+.then(data => {
+if (data.error) {
+  alert(data.error);
+} else {
+  console.log("Login Successfully!!",data.token);
+  localStorage.setItem('token', data.token);
+  alert('Login Successful!!');
   location.replace('../admin/Admin blog/posts/index.html');
 
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    alert('Please Provide Right Information');
-  });
- 
+}
+})
+.catch((err) => {
+console.log(err);
+})
+ }
+ Login ();
+});
 
-        
-        });
-  
-
-
-  
