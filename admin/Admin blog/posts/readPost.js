@@ -30,64 +30,7 @@
     
    
         
-    //Edit Post 
-
-    var EditPost = document.getElementsByClassName("UpdatePost");
-    for (let i of EditPost) {
-        i.addEventListener("click", (event) => {
-            if (event.target.classList.contains("UpdatePost")) {
-                var docId = i.getAttribute("id");
-                console.log("Perfrom Action",docId);
-                
-                // firebase edit
-                var docRef = db.collection("Post-Form").doc(docId);
-
-                docRef.get().then((doc) => {
-                    if (doc.exists) {
-
-                        var Form = document.getElementById("update");
-
-                         document.getElementById("EditTitle").value  = doc.data().Title;
-                         document.getElementById("EditBody").value= doc.data().Body;
-                         document.getElementById("EditTopic").value =doc.data().Topic;
-
-                         
-                         
-                          
-                         Form.addEventListener("submit",(event)=>{
-                            event.preventDefault();
-
-                        var inputTitle = document.getElementById("EditTitle").value;
-                        var bodyDescript = document.getElementsByClassName("ck-editor__editable")[0];
-                        var inputTopic =  document.getElementById("EditTopic").value;
- 
-                            var updateObject =  {
-                                Title: inputTitle,
-                                Body: bodyDescript.innerHTML,
-                                Topic: inputTopic
-                              }
-
-                        var NewUpdate = db.collection("Post-Form").doc(docId);
-
-                            // Set the "capital" field of the city 'DC'
-                            return NewUpdate.update(updateObject)
-                            .then(() => {
-                                alert("Document successfully updated!");
-                                location.reload();
-                            })
-                            .catch((error) => {
-                                // The document probably doesn't exist.
-                                console.error("Error updating document: ", error);
-                            });
-
-
-                      
-                         })
-                    } 
-                })
-            }
-        })
-    }
+   
 
 
  //sign out
