@@ -2,7 +2,7 @@ var ReadPost = document.getElementById("Read-Post");
 var documentPost ='';
 
 const getArticles = () =>{
-    fetch('http://127.0.0.1:5500/api/Articles')
+    fetch('https://wild-red-penguin-tie.cyclic.app/api/Articles')
     .then((response) =>response.json())
     .then((data) =>{
       console.log('integration data', data.Data);
@@ -39,7 +39,7 @@ console.log("okay....")
             return;
         }
         let token = localStorage.getItem("token") 
-        fetch(`http://127.0.0.1:5500/api/Article/` + postId, {
+        fetch(`https://wild-red-penguin-tie.cyclic.app/api/Article/` + postId, {
             method: "DELETE",
             headers:{
                 'auth-token':token
