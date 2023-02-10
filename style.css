@@ -410,24 +410,69 @@ footer a{
   .form-field input[type="text"],
   .form-field input[type="email"],
   .form-field textarea {
- padding: 14px 5px;
-  margin-bottom: 20px;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0px 0px 5px 0px gray;
+    padding: 14px 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px gray;
   }
   
 .form-field input[type="submit"] {
-    width: 100%;
-    padding: 10px 20px;
-    background-color: white;
-    color:#FFB000;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+ width: 100%;
+  padding: 10px 20px;
+  background-color: #FFB000;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
   }
   
   input[type="submit"]:hover {
-    background-color: #FFB000;
+    background-color: #eba104;
   }
+
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  .comments {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .comment {
+    width: 60%;
+    margin-top: 30px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #ccc;
+  }
+  
+  .name {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .email {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 18px;
+  }
+  

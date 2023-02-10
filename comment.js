@@ -34,5 +34,32 @@ console.log("Reaching or not?")
 
  }
 
+//read 
+const GetComments = () => {
+    var articleAddress = location.href.split('?id=')[1];
+    fetch('{http://127.0.0.1:5500/api/Comment?blogId=' +articleAddress,{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+      .then(response => response.json())
+      .then(comments => {
+        comments.forEach(comment => {
+          const commentContainer = document.createElement('div');
+          
+          commentContainer.innerHTML +=  `
+            <p>Name: ${comment.name}</p>
+            <p>Comment: ${comment.comment}</p>
+          `;
 
-//read Comment
+          document.getElementById('Comment_section').appendChild(commentContainer);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching comments:', error);
+      });
+  };
+  
+  GetComments();
+  
