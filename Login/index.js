@@ -8,7 +8,7 @@ loginForm.addEventListener('submit', (event) => {
   const Password = loginForm.elements.password.value;
 
  const Login = () => {
-fetch('http://127.0.0.1:5500/api/Login',{
+fetch('https://wild-red-penguin-tie.cyclic.app/api/Login',{
 method: 'POST',
 headers: {
   "Content-Type": "application/json"

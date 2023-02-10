@@ -14,7 +14,7 @@ row.addEventListener("submit", (event) => {
     Message: inputText
   };
 
-  fetch("http://127.0.0.1:5500/api/contact", {
+  fetch("https://wild-red-penguin-tie.cyclic.app/api/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

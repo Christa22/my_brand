@@ -64,7 +64,7 @@ console.log("okay....")
 //edit 
 const UpdatePost = async (postId) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5500/api/Article/`+ postId, {
+      const response = await fetch(`https://wild-red-penguin-tie.cyclic.app/api/Article/`+ postId, {
         method: 'PUT',
         headers:{
             'auth-token':token

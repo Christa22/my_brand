@@ -4,7 +4,7 @@ console.log("More", Address);
 var ReadArticle = "";
 
 const getSingleArticle = () =>{
-    fetch('http://127.0.0.1:5500/api/Article/'+ Address)
+    fetch('https://wild-red-penguin-tie.cyclic.app/api/Article/'+ Address)
     .then((response) => response.json())
     .then((data) => {
       console.log('integration date',data.data[0]);

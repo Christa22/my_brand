@@ -10,7 +10,7 @@ var picture = document.getElementById("image").value;
 
  const CreateArticle = () =>{
     let token = localStorage.getItem("token")
-fetch('http://127.0.0.1:5500/api/Article', {
+fetch('https://wild-red-penguin-tie.cyclic.app/api/Article', {
   method: 'POST', 
   headers: {
     'auth-token':token,

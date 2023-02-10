@@ -11,7 +11,7 @@ console.log("Reaching or not?")
     var Name = document.getElementById("name").value;
     var Message= document.getElementById("comment").value;
 
-    fetch('http://127.0.0.1:5500/api/Comment?blogId='+articleAddress,{
+    fetch('https://wild-red-penguin-tie.cyclic.app/api/Comment?blogId='+articleAddress,{
         method : 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ console.log("Reaching or not?")
 //read 
 const GetComments = () => {
     var articleAddress = location.href.split('?id=')[1];
-    fetch('{http://127.0.0.1:5500/api/Comment?blogId=' +articleAddress,{
+    fetch('{https://wild-red-penguin-tie.cyclic.app/api/Comment?blogId=' +articleAddress,{
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
