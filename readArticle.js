@@ -2,7 +2,7 @@ var Article =document.getElementById("ReadBlogs");
 var documentPost="";
 
 const getArticles = () =>{
-  fetch('https://wild-red-penguin-tie.cyclic.app/api/Articles')
+  fetch('http://127.0.0.1:5500/api/Articles')
   .then((response) => response.json())
   .then((data) => {
     console.log('integration date',data.Data);
