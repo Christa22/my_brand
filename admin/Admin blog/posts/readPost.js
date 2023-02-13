@@ -62,35 +62,37 @@ console.log("okay....")
 
 
 //edit 
-const UpdatePost = async (postId) => {
-    try {
-      const response = await fetch(`https://wild-red-penguin-tie.cyclic.app/api/Article/`+ postId, {
-        method: 'PUT',
-        headers:{
-            'auth-token':token
-        }
-      });
-      const data = await response.json();
-      const dataOne = data.data[0];
-      document.getElementById("EditTitle").value = dataOne.Title;
-      document.getElementsByClassName("ck-editor__editable")[0].innerHTML = dataOne.articleContents;
-      dataOneument.getElementById("EditTopic").value = dataOne.Topic;
-    } catch (error) {
-      alert("something went wrong with the article you're editing, try again");
-      return;
+const UpdatePost = (postId, newPost) => {
+    if (!postId) {
+        console.error("Error: Invalid postId provided");
+        return;
     }
   
-    const inputTitle = document.getElementById("EditTitle").value;
-    const bodyDescript = document.getElementsByClassName("ck-editor__editable")[0];
-    const inputTopic = document.getElementById("EditTopic").value;
-  
-    const updateObject = {
-      Title: inputTitle,
-      articleContents: bodyDescript.innerHTML,
-      Topic: inputTopic,
-    };
-  };
-  
+    if (!confirm("Are you sure you want to edit this article?")) {
+        return;
+    }
+    let token = localStorage.getItem("token") 
+    fetch(`https://wild-red-penguin-tie.cyclic.app/api/Article/` + postId, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': token
+        },
+        body: JSON.stringify(newPost)
+    })
+    .then(response => {
+        if (!response.ok) {
+            alert("Network response was not ok");
+        } else {
+            alert("Post successfully updated!");
+        }
+        location.reload();
+    })
+    .catch(error => {
+        console.error("Error updating post: ", error);
+    });
+}
+
 
 
 
