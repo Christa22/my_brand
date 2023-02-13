@@ -62,36 +62,36 @@ console.log("okay....")
 
 
 //edit 
-const UpdatePost = (postId, newPost) => {
-    if (!postId) {
-        console.error("Error: Invalid postId provided");
-        return;
-    }
-  
-    if (!confirm("Are you sure you want to edit this article?")) {
-        return;
-    }
-    let token = localStorage.getItem("token") 
-    fetch(`https://wild-red-penguin-tie.cyclic.app/api/Article/` + postId, {
-        method: "PUT",
-        headers: {
-            'Content-Type': 'application/json',
-            'auth-token': token
-        },
-        body: JSON.stringify(newPost)
-    })
-    .then(response => {
+
+const updatePost = async (postId) => {
+    const inputTitle = document.getElementById("EditTitle").value;
+    const bodyDescript = document.getElementsByClassName("ck-editor__editable")[0];
+    const inputTopic = document.getElementById("EditTopic").value;
+    const updateObject = {
+        Title: inputTitle,
+        articleContents: bodyDescript.innerHTML,
+        Topic: inputTopic,
+    };
+    
+    try {
+        const response = await fetch(`https://wild-red-penguin-tie.cyclic.app/api/Article/` + postId, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': localStorage.getItem("token")
+            },
+            body: JSON.stringify(updateObject)
+        });
         if (!response.ok) {
             alert("Network response was not ok");
-        } else {
-            alert("Post successfully updated!");
+            return;
         }
+        alert("Article successfully updated!");
         location.reload();
-    })
-    .catch(error => {
-        console.error("Error updating post: ", error);
-    });
-}
+    } catch (error) {
+        console.error("Error updating article: ", error);
+    }
+};
 
 
 
